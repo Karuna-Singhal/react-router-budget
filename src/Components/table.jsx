@@ -1,20 +1,22 @@
 import ExpenseItem from "./expenseItem";
 
-export default function Table({ expenses }) {
+export default function Table({ expenses, showBudget = true }) {
   return (
     <div className="table">
       <table>
         <thead>
           <tr>
-            {["Name", "Amount", "Date", "Budget", ""].map((i, index) => (
-              <th key={index}>{i}</th>
-            ))}
+            {["Name", "Amount", "Date", showBudget ? "Budget" : "", ""].map(
+              (i, index) => (
+                <th key={index}>{i}</th>
+              )
+            )}
           </tr>
         </thead>
         <tbody>
           {expenses.map((expense) => (
             <tr key={expense.id}>
-              <ExpenseItem expense={expense} />
+              <ExpenseItem expense={expense} showBudget={showBudget} />
             </tr>
           ))}
         </tbody>
