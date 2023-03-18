@@ -23,8 +23,9 @@ import { toast } from "react-toastify";
 export async function dashboardAction({ request }) {
   await wait();
   const data = await request.formData();
-  const { _action, ...value } = Object.fromEntries(data);
 
+  const { _action, ...value } = Object.fromEntries(data);
+  console.log(value);
   // new user submission
   if (_action === "newUser") {
     try {
@@ -35,6 +36,7 @@ export async function dashboardAction({ request }) {
     }
   }
 
+  // user create budget action
   if (_action === "createBudget") {
     try {
       // create budget
