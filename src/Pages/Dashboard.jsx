@@ -66,9 +66,10 @@ export async function dashboardAction({ request }) {
     }
   }
 
+  // delte expenses
   if (_action === "deleteExpense") {
     try {
-      // create budget
+      // delete expenses
       deleteItem({
         key: "expenses",
         id: value.expenseId,
