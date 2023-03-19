@@ -25,7 +25,7 @@ export async function deleteBudget({ params }) {
       });
     });
 
-    toast.success("you've deleted your account!");
+    toast.success("you've deleted your budget!");
   } catch (err) {
     throw new Error("There was a problem deleting your budget.");
   }
